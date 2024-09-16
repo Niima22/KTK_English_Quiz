@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'quiz_screen.dart'; // Ensure this import is correct and points to the file containing your QuizScreen widget
+import 'quiz_screen.dart'; 
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);

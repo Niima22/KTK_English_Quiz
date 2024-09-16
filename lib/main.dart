@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'welcome_screen.dart'; // Ensure this import points to the correct file where WelcomeScreen is defined
-
+import 'welcome_screen.dart';  
 void main() {
   runApp(const MyApp());
 }
@@ -16,8 +15,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const WelcomeScreen(), // Pointing to your WelcomeScreen as the home
-      debugShowCheckedModeBanner: false, // Disables the debug banner
+      home: const WelcomeScreen(),  
+      debugShowCheckedModeBanner: false,  
     );
   }
 }

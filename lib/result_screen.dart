@@ -8,8 +8,7 @@ class ResultScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Calculate the percentage score and round to nearest whole number
-    int percentage = ((score / total) * 100).round();
+     int percentage = ((score / total) * 100).round();
 
     return Scaffold(
       backgroundColor: Color(0xFFE1E9E5),
@@ -19,8 +18,7 @@ class ResultScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Big title on top
-              Text(
+               Text(
                 'Quiz Completed!',
                 style: TextStyle(
                   fontSize: 36,
@@ -31,15 +29,13 @@ class ResultScreen extends StatelessWidget {
               ),
               SizedBox(height: 24),
               
-              // High image
-              Image.asset(
-                'assets/high.png',  // Ensure the correct image is used
+               Image.asset(
+                'assets/high.png',   
                 height: 200,
               ),
               SizedBox(height: 24),
 
-              // Thank you message and score
-              Text(
+               Text(
                 'Thank you for participating. Your score is:',
                 style: TextStyle(
                   fontSize: 18,
@@ -60,10 +56,9 @@ class ResultScreen extends StatelessWidget {
               ),
               SizedBox(height: 32),
 
-              // Restart button
-              ElevatedButton(
+               ElevatedButton(
                 onPressed: () {
-                  // Navigate back to the quiz start page or home
+                 
                   Navigator.pop(context);
                 },
                 child: Text(
@@ -71,7 +66,7 @@ class ResultScreen extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 18,
                     fontFamily: 'LeagueSpartan',
-                    color: Color(0xFF18392F), // Same color as title
+                    color: Color(0xFF18392F),  
                   ),
                 ),
                 style: ElevatedButton.styleFrom(

@@ -7,8 +7,7 @@ class AboutUsScreen extends StatefulWidget {
 
 class _AboutUsScreenState extends State<AboutUsScreen> {
   int _selectedIndex = 0;
-
-  // List of content for each section
+ 
   final List<Widget> _sectionContents = [
     Center(
       child: Column(
@@ -25,7 +24,7 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
           ),
           SizedBox(height: 10),
           RichText(
-            textAlign: TextAlign.center, // Centering the text
+            textAlign: TextAlign.center,  
             text: TextSpan(
               style: TextStyle(
                   fontSize: 18,
@@ -86,7 +85,7 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
         Row(
           children: [
             Image.asset(
-              'assets/new.png', // Ensure your 'new.png' is in the assets folder
+              'assets/new.png',  
               height: 24,
               width: 24,
             ),
@@ -104,7 +103,7 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image.asset(
-              'assets/facebook.png', // Ensure your 'facebook.png' is in the assets folder
+              'assets/facebook.png',  
               height: 24,
               width: 24,
             ),
@@ -125,42 +124,42 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
     Text(
       'Acknowledgments',
       style: TextStyle(
-        fontSize: 20, // Reduced the font size for title
+        fontSize: 20,  
         fontWeight: FontWeight.bold,
         color: Colors.teal,
         fontFamily: 'LeagueSpartan',
       ),
     ),
-    SizedBox(height: 8), // Reduced the spacing
+    SizedBox(height: 8),  
     Text(
       'The contents of the app so far come from the Moroccan Ministry of Education official teacher exams (2016-2023) with slight adaptations.',
-      style: TextStyle(fontSize: 16, fontFamily: 'LeagueSpartan'), // Smaller text
+      style: TextStyle(fontSize: 16, fontFamily: 'LeagueSpartan'),  
     ),
     SizedBox(height: 8), 
     Text(
       'I would like to thank every dedicated student from the Department of English at ENS (Ecole Normale Supérieure, Rabat) and from elsewhere who have contributed to the creation of this app.',
-      style: TextStyle(fontSize: 16, fontFamily: 'LeagueSpartan'), // Smaller text
+      style: TextStyle(fontSize: 16, fontFamily: 'LeagueSpartan'),  
     ),
     SizedBox(height: 8), 
     Text(
       'Big thanks also to:',
-      style: TextStyle(fontSize: 16, fontFamily: 'LeagueSpartan'), // Smaller text
+      style: TextStyle(fontSize: 16, fontFamily: 'LeagueSpartan'),  
     ),
     SizedBox(height: 8),
-    // List of contributors
+   
     Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           '- Youness El Yazami Adli',
-          style: TextStyle(fontSize: 16, fontFamily: 'LeagueSpartan'), // Smaller text for names
+          style: TextStyle(fontSize: 16, fontFamily: 'LeagueSpartan'),  
         ),
         Text(
-          '- (leave it blank for now)', // Placeholder for future name
+          '- (leave it blank for now)',  
           style: TextStyle(fontSize: 16, fontFamily: 'LeagueSpartan'),
         ),
         Text(
-          '- Bettaoui Niima', // Placeholder for your name
+          '- Bettaoui Niima',  
           style: TextStyle(fontSize: 16, fontFamily: 'LeagueSpartan'),
         ),
       ],

@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:quiz/models/answer.dart';
 import 'package:quiz/models/question.dart';
 import 'package:quiz/result_screen.dart';
-import 'about_us_screen.dart'; // Ensure this import points to the correct file where AboutUsScreen is defined
+import 'about_us_screen.dart';  
 
 class QuizScreen extends StatefulWidget {
   const QuizScreen({Key? key}) : super(key: key);
@@ -19,7 +19,7 @@ class _QuizScreenState extends State<QuizScreen> with RestorationMixin {
   int _score = 0;
   bool _isAnswered = false;
   int _selectedAnswerIndex = -1;
-  TextEditingController _controller = TextEditingController(); // Controller for input
+  TextEditingController _controller = TextEditingController();  
 
   @override
   String? get restorationId => 'quiz_screen';
@@ -46,7 +46,7 @@ class _QuizScreenState extends State<QuizScreen> with RestorationMixin {
   @override
   void dispose() {
     _currentQuestionIndex.dispose();
-    _controller.dispose(); // Dispose the controller
+    _controller.dispose();    
     super.dispose();
   }
 
@@ -87,7 +87,7 @@ class _QuizScreenState extends State<QuizScreen> with RestorationMixin {
     }
   }
 
-  // Function to go to a specific question based on user input
+ 
   void _goToQuestion() {
     int? questionNumber = int.tryParse(_controller.text);
     if (questionNumber != null && questionNumber > 0 && questionNumber <= _questions.length) {
@@ -97,8 +97,7 @@ class _QuizScreenState extends State<QuizScreen> with RestorationMixin {
         _currentQuestionIndex.value = questionNumber - 1;
       });
     } else {
-      // Show a snackbar or alert for invalid input
-      ScaffoldMessenger.of(context).showSnackBar(
+       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Please enter a valid question number between 1 and ${_questions.length}')),
       );
     }
@@ -109,11 +108,11 @@ class _QuizScreenState extends State<QuizScreen> with RestorationMixin {
       return Colors.white;
     }
     if (_questions[_currentQuestionIndex.value].answers[index].isCorrect) {
-      return Color(0xFF94D1BE); // Correct answer color
+      return Color(0xFF94D1BE);  
     } else if (index == _selectedAnswerIndex) {
-      return Color(0xFFE56857); // Wrong selected answer color
+      return Color(0xFFE56857);  
     }
-    return Colors.white; // Default color
+    return Colors.white; 
   }
 
   @override
@@ -130,14 +129,14 @@ class _QuizScreenState extends State<QuizScreen> with RestorationMixin {
 
     return Scaffold(
       backgroundColor: Color(0xFFE1E9E5),
-      resizeToAvoidBottomInset: true, // Ensures the screen adjusts when the keyboard appears
+      resizeToAvoidBottomInset: true,  
       body: GestureDetector(
-        onTap: () => FocusScope.of(context).unfocus(), // Dismiss keyboard when tapping outside
+        onTap: () => FocusScope.of(context).unfocus(),  
         child: SafeArea(
-          child: SingleChildScrollView( // Allows the content to adjust when keyboard is visible
+          child: SingleChildScrollView(  
             child: Padding(
               padding: EdgeInsets.only(
-                bottom: MediaQuery.of(context).viewInsets.bottom + 16.0, // Dynamic bottom padding
+                bottom: MediaQuery.of(context).viewInsets.bottom + 16.0,  
               ),
               child: Column(
                 children: [
@@ -178,7 +177,7 @@ class _QuizScreenState extends State<QuizScreen> with RestorationMixin {
                       ),
                     ),
                   ),
-                  // Add the "Take me to Question" button after the progress bar
+                   
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 8.0),
                     child: Row(
@@ -192,12 +191,12 @@ class _QuizScreenState extends State<QuizScreen> with RestorationMixin {
                               hintText: 'Enter question number',
                               hintStyle: const TextStyle(fontFamily: 'LeagueSpartan'),
                               border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(20), // Rounded input field
-                                borderSide: BorderSide(color: Color(0xFF18392F)), // Dark green border
+                                borderRadius: BorderRadius.circular(20),  
+                                borderSide: BorderSide(color: Color(0xFF18392F)),  
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(20),
-                                borderSide: BorderSide(color: Color(0xFF18392F)), // Dark green when focused
+                                borderSide: BorderSide(color: Color(0xFF18392F)),  
                               ),
                             ),
                           ),
@@ -209,15 +208,15 @@ class _QuizScreenState extends State<QuizScreen> with RestorationMixin {
                             'Take me to Question',
                             style: const TextStyle(
                               fontFamily: 'LeagueSpartan',
-                              color: Color(0xFF18392F), // Dark green text
+                              color: Color(0xFF18392F),  
                             ),
                           ),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.white, // White background
+                            backgroundColor: Colors.white,  
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20), // Rounded button
+                              borderRadius: BorderRadius.circular(20),  
                             ),
-                            side: BorderSide(color: Color(0xFF18392F)), // Dark green border
+                            side: BorderSide(color: Color(0xFF18392F)),  
                             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                           ),
                         ),
@@ -308,13 +307,13 @@ class _QuizScreenState extends State<QuizScreen> with RestorationMixin {
                         _currentQuestionIndex == _questions.length - 1 ? 'Submit Quiz' : 'Next Question',
                         style: const TextStyle(
                           fontFamily: 'LeagueSpartan',
-                          color: Colors.white, // White text for the main button
+                          color: Colors.white,  
                         ),
                       ),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFF18392F), // Dark green background
+                        backgroundColor: Color(0xFF18392F),  
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30), // More rounded button
+                          borderRadius: BorderRadius.circular(30),  
                         ),
                         padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
                       ),
